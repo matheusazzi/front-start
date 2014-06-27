@@ -21,7 +21,7 @@ This is my front start for projects.
 - JS Compress
 - IMG Compress
 
-### Dependencies
+## Dependencies
 
 - [NodeJS](http://nodejs.org/)
 - [Gulp](http://github.com/gulpjs/gulp)
@@ -40,13 +40,13 @@ cd front-start
 npm i
 ```
 
-### Getting Started
+## Getting Started
 
-#### For development:
+### For development:
 
 `gulp serve` or just `gulp s`
 
-#### For build:
+### For build:
 
 `gulp build` or just `gulp b`
 
@@ -54,7 +54,7 @@ This command will generate a `/dist` folder, with all files concatenated and com
 
 Ready for deploy.
 
-### Structure:
+## Structure:
 
 ```
 front-start/
@@ -83,7 +83,7 @@ front-start/
 ├── package.json
 ```
 
-### Browser Support
+## Browser Support
 
 - IE8+
 - Firefox
