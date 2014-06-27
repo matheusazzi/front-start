@@ -1,0 +1,47 @@
+// ==========================================================================
+// Forms
+// ==========================================================================
+
+.form-field {
+  width: 300px;
+  height: 50px;
+  border: 1px solid $primary-color;
+  font-size: rem(14px);
+  color: #43454A;
+  line-height: 18px;
+  padding: 16px 13px;
+  background: #fff;
+  margin: 0 0 14px;
+
+  &::-moz-placeholder {
+    color: #43454A;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: #43454A;
+  }
+
+  &::-webkit-input-placeholder {
+    color: #43454A;
+  }
+
+  &.placeholder {
+    color: #43454A;
+  }
+
+  &.has-error {
+    border-color: #a94442;
+  }
+
+  &.has-success {
+    border-color: #3c763d;
+  }
+}
+
+.form-field:disabled,
+:disabled .form-field,
+.disabled .form-field {
+  border: 1px solid $primary-color;
+  opacity: .5;
+}

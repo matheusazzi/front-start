@@ -1,0 +1,35 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+//
+// Main
+//
+
+$main-font-size: 16px !default;
+$main-font-family: Arial, tahoma, sans-serif !default;
+$main-text-color: #333 !default;
+
+//
+// Grid
+//
+
+$container-width: 940px !default;
+
+//
+// Colors
+//
+
+$primary-color: #428BCA;
+$primary-color-lighten: lighten($primary-color, 6%);
+$primary-color-darken: darken($primary-color, 6%);
+
+$secondary-color: #196E76;
+$secondary-color-lighten: lighten($secondary-color, 6%);
+$secondary-color-darken: darken($secondary-color, 6%);
+
+//
+// Typography
+//
+
+$titles-color: $primary-color;

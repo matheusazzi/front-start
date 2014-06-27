@@ -1,0 +1,72 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html lang="en-US class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en-US" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en-US" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="all">
+  <meta name="rating" content="general">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+  <meta name="author" content="">
+  <meta name="Publisher" content="">
+  <meta name="owner" content="">
+  <meta name="copyright" content="">
+
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/touch/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/touch/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/touch/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/images/touch/apple-touch-icon-57x57-precomposed.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets/images/touch/apple-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#222222">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="{% block title %}{% endblock %}">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="196x196" href="assets/images/touch/chrome-touch-icon-196x196.png">
+
+  <!-- Facebook -->
+  <meta property="og:title" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="site">
+  <meta property="og:description" content="">
+
+  <link rel="canonical" href="">
+
+  {% block styles %}{% endblock %}
+  <script src="assets/vendor/modernizr/modernizr.js"></script>
+</head>
+
+<body class="{% block dispatcher %}{% endblock %}" data-dispatcher="{% block dispatcher %}{% endblock %}">
+  <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  {% include "../partials/_header.html" %}
+
+  {% block content %}{% endblock %}
+
+  {% include "../partials/_footer.html" %}
+
+  {% block scripts %}{% endblock %}
+
+  {% include "../partials/_analytics.html" %}
+</body>
+</html>

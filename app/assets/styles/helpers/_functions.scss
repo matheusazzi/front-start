@@ -1,0 +1,11 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+@function rem($px, $base: $main-font-size) {
+  @return ($px / $base) * 1rem;
+}
+
+@function em($px, $base: $main-font-size) {
+  @return ($px / $base) * 1em;
+}

@@ -1,0 +1,48 @@
+{% extends "../layouts/default.html" %}
+
+{% block title %}Front Start{% endblock %}
+{% block dispatcher %}home{% endblock %}
+
+{% block styles %}
+<!-- build:css assets/styles/style.css -->
+<link rel="stylesheet" href="styles/style.css">
+<!-- endbuild -->
+{% endblock %}
+
+{% block content %}
+<main id="main" role="main">
+  <div class="center">
+    <h1>Hello Dev!</h1>
+    <p>With this you have many features:</p>
+    <ul>
+      <li>HTML5 Boilerplate</li>
+      <li>Swig Template Engine, for smart views</li>
+      <li>Bower, as a package manager</li>
+      <li>Sass (with libsass for higher performance)</li>
+      <li>Auto Prefixer</li>
+      <li>Browser Sync</li>
+      <li>AMD JS Modules</li>
+      <li>jQuery</li>
+      <li>Normalize</li>
+      <li>Modernizr</li>
+      <li>JS Hint</li>
+      <li>HTML Minification</li>
+      <li>CSS Compress</li>
+      <li>JS Compress</li>
+      <li>IMG Compress</li>
+    </ul>
+  </div>
+</main>
+
+<aside class="sidebar" role="complementary">
+</aside>
+{% endblock %}
+
+{% block scripts %}
+<!-- build:js assets/scripts/app.js -->
+<script src="assets/vendor/almond/almond.js"></script>
+<script src="assets/vendor/jquery/dist/jquery.js"></script>
+<script src="assets/scripts/home.js"></script>
+<script src="assets/scripts/app.js"></script>
+<!-- endbuild -->
+{% endblock %}

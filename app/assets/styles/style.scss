@@ -1,0 +1,23 @@
+// Utils
+@import 'helpers/variables';
+@import 'helpers/functions';
+@import 'helpers/placeholders';
+
+// Vendors
+@import '../vendor/modularized-normalize-scss/normalize';
+
+// Core
+@import 'scaffold/h5bp';
+@import 'scaffold/geral';
+@import 'scaffold/viewport';
+@import 'scaffold/grid';
+@import 'scaffold/typography';
+@import 'scaffold/buttons';
+@import 'scaffold/forms';
+
+// Modules
+@import 'modules/header';
+@import 'modules/footer';
+
+// Pages
+@import 'pages/home';

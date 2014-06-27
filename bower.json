@@ -1,0 +1,10 @@
+{
+  "name": "front-start",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.1",
+    "almond": "~0.2.9",
+    "modularized-normalize-scss": "~3.0.1",
+    "jquery": "~2.1.1"
+  }
+}
