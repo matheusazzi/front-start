@@ -117,10 +117,8 @@ gulp.task('scripts:compress', function() {
 
 gulp.task('copy', function() {
   return gulp.src([
-      'app/favicon.ico',
-      'app/404.html',
-      'app/robots.txt',
-      'app/humans.txt'
+      'app/*',
+      '!app/*.html'
     ])
     .pipe(gulp.dest('dist'))
     .pipe($.size({
@@ -148,8 +146,6 @@ gulp.task('serve', function() {
   gulp.watch(['app/assets/images/**/*'], reload);
 });
 
-gulp.task('s', ['serve']);
-
 // Build Production Files
 gulp.task('build', ['clean'], function(cb) {
   runSequence(
@@ -165,4 +161,17 @@ gulp.task('build', ['clean'], function(cb) {
   );
 });
 
+// Serve Builded Directory
+gulp.task('serve:dist', ['build'], function () {
+  browserSync({
+    notify: false,
+    server: {
+      baseDir: 'dist'
+    }
+  });
+});
+
+// Shortcuts
+gulp.task('s', ['serve']);
+gulp.task('s:dist', ['serve:dist']);
 gulp.task('b', ['build']);
