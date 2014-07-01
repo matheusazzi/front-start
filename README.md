@@ -54,6 +54,12 @@ This command will generate a `/dist` folder, with all files concatenated and com
 
 Ready for deploy.
 
+### Serve dist:
+
+If you want to serve your builded directory (/dist) for test something.
+
+`gulp serve:dist` or just `gulp s:dist`
+
 ## Structure:
 
 ```
