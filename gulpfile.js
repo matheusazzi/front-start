@@ -7,6 +7,18 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
+var AUTOPREFIXER_BROWSERS = [
+  'ie >= 9',
+  'ie_mob >= 10',
+  'ff >= 30',
+  'chrome >= 34',
+  'safari >= 7',
+  'opera >= 23',
+  'ios >= 7',
+  'android >= 4.4',
+  'bb >= 10'
+];
+
 // Compile Swig views
 gulp.task('views:compile', function() {
   return gulp.src('app/views/pages/*.html')
@@ -73,8 +85,8 @@ gulp.task('images', function() {
 // Compile Sass Files and Autoprefix
 gulp.task('styles:compile', function() {
   return gulp.src('app/assets/styles/*.scss')
-    .pipe($.sass())
-    .pipe($.autoprefixer('last 2 version'))
+    .pipe($.sass().on('error', console.error.bind(console)))
+    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(reload({
       stream: true
@@ -162,7 +174,7 @@ gulp.task('build', ['clean'], function(cb) {
 });
 
 // Serve Builded Directory
-gulp.task('serve:dist', ['build'], function () {
+gulp.task('serve:dist', ['build'], function() {
   browserSync({
     notify: false,
     server: {

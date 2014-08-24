@@ -1,22 +1,25 @@
-define('app', ['jquery'], function($) {
+var App = (function($) {
   'use strict';
 
-  return {
-    init: function() {
-      this.appHello();
-      require([$('body').data('dispatcher')], function(dispatcher) {
-        dispatcher.init();
-      });
-    },
-
-    appHello: function() {
-      console.log('App module');
-    }
+  var appHello = function() {
+    console.log('App module');
   };
 
-});
+  var initDispatcher = function() {
+    var dispatcher = $('body').data('dispatcher');
+    dispatcher = dispatcher.charAt(0).toUpperCase() + dispatcher.slice(1);
+    window[dispatcher].init();
+  };
 
-require(['app'], function(app) {
-  'use strict';
-  app.init();
-});
+  var init = function() {
+    appHello();
+    initDispatcher();
+  };
+
+  return {
+    init: init
+  };
+
+})(jQuery);
+
+App.init();

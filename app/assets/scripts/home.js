@@ -1,14 +1,16 @@
-define('home', ['jquery', 'app'], function($, app) {
+var Home = (function($) {
   'use strict';
 
-  return {
-    init: function() {
-      this.homeHello();
-    },
-
-    homeHello: function() {
-      console.log('Home module');
-    }
+  var homeHello = function() {
+    console.log('Home module');
   };
 
-});
+  var init = function() {
+    homeHello();
+  };
+
+  return {
+    init: init
+  };
+
+})(jQuery);
