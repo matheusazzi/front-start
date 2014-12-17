@@ -139,16 +139,16 @@ input[type="search"] {
   border: 0;
   overflow: hidden;
   display: block;
-    // IE 6/7 fallback
-    *text-indent: -9999px;
-  }
+  // IE 6/7 fallback
+  *text-indent: -9999px;
+}
 
-  .ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-  }
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
 
 //
 // Hide from both screenreaders and browsers: h5bp.com/u
@@ -187,13 +187,13 @@ input[type="search"] {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; // 1
-    display: table; // 2
-  }
+  content: " "; // 1
+  display: table; // 2
+}
 
-  .clearfix:after {
-    clear: both;
-  }
+.clearfix:after {
+  clear: both;
+}
 
 //
 // For IE 6/7 only
@@ -202,30 +202,6 @@ input[type="search"] {
 
 .clearfix {
   *zoom: 1;
-}
-
-//
-// Placeholders
-//
-
-::-webkit-input-placeholder {
-  color: #D7D7D7;
-  opacity: 1;
-}
-
-:-moz-placeholder {
-  color: #D7D7D7;
-  opacity: 1;
-}
-
-::-moz-placeholder {
-  color: #D7D7D7;
-  opacity: 1;
-}
-
-:-ms-input-placeholder {
-  opacity: 1;
-  color: #D7D7D7;
 }
 
 // ==========================================================================

@@ -35,3 +35,17 @@
   clip: rect(0, 0, 0, 0);
   border: 0
 }
+
+%text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &::-o-input-placeholder { @content; }
+  &::-ms-input-placeholder { @content; }
+  &::-moz-input-placeholder { @content; }
+  &::input-placeholder { @content; }
+}
