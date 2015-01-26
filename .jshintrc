@@ -13,8 +13,11 @@
   "noarg": true,
   "quotmark": "single",
   "undef": true,
+  "unused": "vars",
   "strict": true,
   "globals": {
-    "jQuery": true
+    "jQuery": true,
+    "define": true,
+    "require": true
   }
 }

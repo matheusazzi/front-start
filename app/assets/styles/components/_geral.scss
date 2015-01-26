@@ -1,0 +1,84 @@
+// ==========================================================================
+// Geral
+// ==========================================================================
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: $main-text-color;
+}
+
+html {
+  font-size: $main-font-size;
+  font-family: $main-font-family;
+  line-height: 1.4;
+}
+
+:active,
+:focus {
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  li {
+    list-style: none;
+  }
+}
+
+li {
+  list-style: disc inside;
+}
+
+img {
+  max-width: 100%;
+}
+
+address {
+  font-style: normal;
+}
+
+::selection {
+  background: #B3D4FC;
+  text-shadow: none;
+}
+
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+
+form,
+fieldset,
+p,
+strong,
+span,
+li,
+ul,
+ol,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+img {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}

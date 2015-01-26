@@ -8,13 +8,7 @@
 
 $main-font-size: 16px !default;
 $main-font-family: Arial, tahoma, sans-serif !default;
-$main-text-color: #333 !default;
-
-//
-// Grid
-//
-
-$container-width: 940px !default;
+$main-text-color: #222 !default;
 
 //
 // Colors
@@ -30,6 +24,10 @@ $secondary-color-darken: darken($secondary-color, 6%);
 
 $error: #A94442;
 $success: #3C763D;
+
+$white: #FFF;
+$gray: #666;
+$light-gray: #A2A2A2;
 
 //
 // Typography

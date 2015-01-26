@@ -108,7 +108,8 @@ gulp.task('styles:compress', function() {
 
 // Concatenate JavaScript
 gulp.task('scripts:concat', function() {
-  return $.bowerFiles().pipe(gulp.dest('.tmp/scripts'))
+  return $.bowerFiles()
+    .pipe(gulp.dest('.tmp/scripts'))
     .pipe($.size({
       title: 'scripts:concat'
     }));

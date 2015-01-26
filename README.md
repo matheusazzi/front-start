@@ -11,15 +11,12 @@ This is my front start for projects.
 - Sass (with libsass for higher performance)
 - Auto Prefixer
 - Browser Sync
-- AMD JS Modules
-- jQuery
-- Normalize
-- Modernizr
+- AMD JS Modules (files are dynamically executed by a [Dispatcher](#how-dispatcher-works))
+- jQuery, Normalize and Modernizr
+- [Bourbon](http://bourbon.io/) and [Neat](http://neat.bourbon.io/) to provide some mixins and a Grid System
 - JS Hint
 - HTML minification
-- CSS Compress
-- JS Compress
-- IMG Compress
+- Assets are concatenated and compressed (JS, CSS and images)
 
 ## Dependencies
 
@@ -40,7 +37,7 @@ cd front-start
 npm i
 ```
 
-## Getting Started
+## Workflow
 
 ### For development:
 
@@ -100,11 +97,134 @@ front-start/
 - Android / Chrome 4.4+
 - BlackBerry 10
 
+## How Dispatcher Works
+
+We use AMD to organize our code, so we use [Almond](http://github.com/jrburke/almond) for this.
+
+This is the dispatcher code:
+
+```javascript
+define('dispatcher', ['jquery'],
+  function($) {
+    'use strict';
+
+    var components = $('[data-component]'),
+      modules = $('body').data('modules').split();
+
+    $.each(components, function(__index, component) {
+      var currentComponent = $(component),
+        options = currentComponent.data();
+
+      require(options.component);
+      currentComponent[options.component](options);
+    });
+
+    $.each(modules, function(index) {
+      var Module = require(modules[index]);
+      new Module();
+    });
+  }
+);
+
+require('dispatcher');
+```
+
+The dispatcher will instantiate modules and execute components like a jQuery plugin, then you need to code them that.
+
+If you have a code like this:
+
+```html
+<body data-modules="foo bar baz">
+
+  <button data-component="backToTop" data-speed="600">Back to top</button>
+
+  <div
+    data-component="carousel"
+    data-pagination="true"
+    data-slides-to-show="3"
+    data-circular="true"></div>
+
+</body>
+```
+
+The dispatcher will automatically require the modules `foo`, `bar` and `baz` present in `data-modules` on `body` tag. And will execute the components based on the attribute `data-component`, passing other attributes as options, after require the files, this example will execute:
+
+```javascript
+new Foo();
+new Bar();
+new Baz();
+
+$('data-component="backToTop"').backToTop({
+  speed: 600
+});
+
+$('[data-component="carousel"]').carousel({
+  pagination: true,
+  slidesToShow: 3,
+  circular: true
+});
+```
+
+### Coding modules
+
+Code modules like a javascript class, so it will be instantiate when needed.
+
+```javascript
+define('someService', ['jquery'],
+  function($) {
+    'use strict';
+
+    function SomeService() {
+      this.sayHello();
+    }
+
+    SomeService.prototype.sayHello = function() {
+      console.log('Hello from SomeService Module');
+    };
+
+    return SomeService;
+  }
+);
+```
+
+### Coding components
+
+Code every component like a jQuery plugin, it will be dynamically executed passing the options to the plugin.
+
+```javascript
+define('backToTop', ['jquery'],
+  function($) {
+    'use strict';
+
+    $.fn.backToTop = function(options) {
+      var defaults = {
+        scrollSpeed: 400,
+        scrollToPosition: 0
+      };
+
+      var settings = $.extend({}, defaults, options);
+
+      this.on('click', function(e) {
+        e.preventDefault();
+
+        $('html, body').animate({
+          scrollTop: settings.scrollToPosition
+        }, settings.scrollSpeed);
+
+        return false;
+      });
+
+      return this;
+    };
+  }
+);
+```
+
 ## License
 
 ### The MIT License (MIT)
 
-Copyright © 2014 Matheus Azzi <matheuslazzi@gmail.com>
+Copyright © 2015 Matheus Azzi <matheuslazzi@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

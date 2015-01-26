@@ -1,0 +1,47 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.btn {
+  margin: 0 auto;
+  display: inline-block;
+  background: $white;
+  color: $gray;
+  font-size: rem(14px);
+  min-width: 70px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: rem(6px) rem(12px);
+  border-radius: 3px;
+  user-select: none;
+  transition: all 250ms;
+
+  &:hover,
+  &:active {
+    background: $light-gray;
+    color: $white;
+  }
+
+  &--primary {
+    color: $white;
+    background: $primary-color;
+
+    &:hover,
+    &:active {
+      background: $primary-color-darken;
+    }
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+    padding: rem(12px) 0;
+  }
+}

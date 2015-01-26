@@ -1,23 +1,24 @@
+@import
+
 // Utils
-@import 'helpers/variables';
-@import 'helpers/functions';
-@import 'helpers/placeholders';
+  'helpers/variables',
+  'helpers/functions',
+  'helpers/placeholders',
 
 // Vendors
-@import '../vendor/modularized-normalize-scss/normalize';
+  '../vendor/modularized-normalize-scss/normalize',
+  '../vendor/bourbon/dist/bourbon',
+  '../vendor/neat/app/assets/stylesheets/neat',
 
-// Core
-@import 'scaffold/h5bp';
-@import 'scaffold/geral';
-@import 'scaffold/viewport';
-@import 'scaffold/grid';
-@import 'scaffold/typography';
-@import 'scaffold/buttons';
-@import 'scaffold/forms';
+// Components
+  'components/geral',
+  'components/container',
+  'components/viewport',
+  'components/typography',
+  'components/buttons',
+  'components/forms',
 
 // Modules
-@import 'modules/header';
-@import 'modules/footer';
-
-// Pages
-@import 'pages/home';
+  'modules/header',
+  'modules/footer',
+  'modules/print';

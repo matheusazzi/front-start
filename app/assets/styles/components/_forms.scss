@@ -2,16 +2,28 @@
 // Forms
 // ==========================================================================
 
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+textarea {
+  resize: vertical;
+}
+
 .form-field {
-  width: rem(300px);
-  height: rem(50px);
-  border: 1px solid $primary-color;
+  width: 100%;
+  height: rem(35px);
+  border: 1px solid $gray;
   font-size: rem(14px);
   color: #43454A;
   line-height: 1.2;
-  padding: rem(16px) rem(13px);
-  background: #FFF;
+  padding: rem(10px);
+  background: $white;
   margin: 0 0 14px;
+
+  &:focus {
+    border-color: $primary-color;
+  }
 
   @include placeholder {
     color: lighten(#43454A, 10%);
@@ -29,11 +41,17 @@
   &.has-success {
     border-color: $success;
   }
+
+  &--text {
+    min-height: 100px;
+  }
 }
 
 .form-field:disabled,
 :disabled .form-field,
-.disabled .form-field {
+.form-field.is-disabled,
+.is-disabled .form-field {
   border: 1px solid $primary-color;
+  pointer-events: none;
   opacity: .5;
 }
