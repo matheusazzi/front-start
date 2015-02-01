@@ -16,8 +16,6 @@ define('backToTop', ['jquery'],
         $('html, body').animate({
           scrollTop: settings.scrollToPosition
         }, settings.scrollSpeed);
-
-        return false;
       });
 
       return this;

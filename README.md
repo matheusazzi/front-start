@@ -65,7 +65,12 @@ front-start/
 │   ├── assets/
 │   │   ├── images/
 │   │   ├── scripts/  # AMD JS files
+│   │   │   ├── components/
+│   │   │   ├── modules/
 │   │   ├── styles/   # SCSS files
+│   │   │   ├── components/
+│   │   │   ├── helpers/
+│   │   │   ├── widgets/
 │   │   ├── vendor/   # Bower packages
 │   ├── views/        # Swig templates
 │   │   ├── layouts/
@@ -121,7 +126,8 @@ define('dispatcher', ['jquery'],
 
     $.each(modules, function(index) {
       var Module = require(modules[index]);
-      new Module();
+      Module = new Module();
+      Module.initialize();
     });
   }
 );
@@ -129,7 +135,7 @@ define('dispatcher', ['jquery'],
 require('dispatcher');
 ```
 
-The dispatcher will instantiate modules and execute components like a jQuery plugin, then you need to code them that.
+The dispatcher will instantiate modules and execute components like a jQuery plugin, then you need to code them that way.
 
 If you have a code like this:
 
@@ -150,9 +156,11 @@ If you have a code like this:
 The dispatcher will automatically require the modules `foo`, `bar` and `baz` present in `data-modules` on `body` tag. And will execute the components based on the attribute `data-component`, passing other attributes as options, after require the files, this example will execute:
 
 ```javascript
-new Foo();
-new Bar();
-new Baz();
+var Module;
+
+Module = new Foo(); Module.initialize();
+Module = new Bar(); Module.initialize();
+Module = new Baz(); Module.initialize();
 
 $('data-component="backToTop"').backToTop({
   speed: 600
@@ -167,7 +175,11 @@ $('[data-component="carousel"]').carousel({
 
 ### Coding modules
 
-Code modules like a javascript class, so it will be instantiate when needed.
+Code modules like a javascript class, using a method called `initialize` to start they behavior, so it will be instantiate when needed.
+
+> Why have an initialize method?
+
+- Because constructors should not cause [side effects](http://blog.millermedeiros.com/constructors-should-not-cause-side-effects/).
 
 ```javascript
 define('someService', ['jquery'],
@@ -175,11 +187,15 @@ define('someService', ['jquery'],
     'use strict';
 
     function SomeService() {
-      this.sayHello();
+      this.message = 'Hello from SomeService Module';
     }
 
+    SomeService.prototype.initialize = function() {
+      this.sayHello();
+    };
+
     SomeService.prototype.sayHello = function() {
-      console.log('Hello from SomeService Module');
+      console.log(this.message);
     };
 
     return SomeService;
@@ -190,6 +206,8 @@ define('someService', ['jquery'],
 ### Coding components
 
 Code every component like a jQuery plugin, it will be dynamically executed passing the options to the plugin.
+
+A component should always return `this`.
 
 ```javascript
 define('backToTop', ['jquery'],
@@ -210,8 +228,6 @@ define('backToTop', ['jquery'],
         $('html, body').animate({
           scrollTop: settings.scrollToPosition
         }, settings.scrollSpeed);
-
-        return false;
       });
 
       return this;

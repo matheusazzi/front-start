@@ -15,7 +15,8 @@ define('dispatcher', ['jquery'],
 
     $.each(modules, function(index) {
       var Module = require(modules[index]);
-      new Module();
+      Module = new Module();
+      Module.initialize();
     });
   }
 );

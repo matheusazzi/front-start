@@ -3,11 +3,15 @@ define('home', ['jquery'],
     'use strict';
 
     function Home() {
-      this.sayHello();
+      this.message = 'Hello from Home Module';
     }
 
+    Home.prototype.initialize = function() {
+      this.sayHello();
+    };
+
     Home.prototype.sayHello = function() {
-      console.log('Hello from Home Module');
+      console.log(this.message);
     };
 
     return Home;

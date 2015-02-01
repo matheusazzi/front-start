@@ -1,8 +1,8 @@
 // ==========================================================================
-// Placeholders
+// Mixins
 // ==========================================================================
 
-%clearfix {
+@mixin clearfix {
   &::before,
   &::after {
     content: '';
@@ -14,18 +14,18 @@
   }
 }
 
-%hide-text {
+@mixin hide-text {
   font: 0/0 a;
   text-shadow: none;
 }
 
-%grayscale {
+@mixin grayscale {
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
   filter: gray; /* IE6-9 */
   -webkit-filter: #{"grayscale(100%)"}; /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
 
-%sr-only {
+@mixin sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -36,7 +36,7 @@
   border: 0
 }
 
-%text-truncate {
+@mixin text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -48,4 +48,28 @@
   &::-ms-input-placeholder { @content; }
   &::-moz-input-placeholder { @content; }
   &::input-placeholder { @content; }
+}
+
+// ==========================================================================
+// Placeholders
+// ==========================================================================
+
+%clearfix {
+  @include clearfix();
+}
+
+%hide-text {
+  @include hide-text();
+}
+
+%grayscale {
+  @include grayscale();
+}
+
+%sr-only {
+  @include sr-only();
+}
+
+%text-truncate {
+  @include text-truncate();
 }
