@@ -129,6 +129,18 @@ gulp.task('scripts:compress', function() {
     }));
 });
 
+// Modernizr
+gulp.task('scripts:modernizr', function() {
+  return gulp.src([
+      'app/assets/vendor/modernizr/modernizr.js'
+    ])
+    .pipe($.uglifyjs('modernizr.js'))
+    .pipe(gulp.dest('dist/assets/scripts'))
+    .pipe($.size({
+      title: 'scripts:modernizr'
+    }));
+});
+
 gulp.task('copy', function() {
   return gulp.src([
       'app/*',
@@ -168,6 +180,7 @@ gulp.task('build', ['clean'], function(cb) {
     'styles:compress',
     'jshint',
     'scripts:concat',
+    'scripts:modernizr',
     'scripts:compress',
     'views:compress',
     'images',
