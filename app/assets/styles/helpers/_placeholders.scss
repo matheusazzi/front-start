@@ -15,7 +15,7 @@
 }
 
 @mixin hide-text {
-  font: 0/0 a;
+  font: 0/0 a !important;
   text-shadow: none;
 }
 

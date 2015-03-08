@@ -1,9 +1,10 @@
 @import
 
 // Utils
-  'helpers/variables',
   'helpers/functions',
+  'helpers/variables',
   'helpers/placeholders',
+  'helpers/utils',
 
 // Vendors
   '../vendor/modularized-normalize-scss/normalize',

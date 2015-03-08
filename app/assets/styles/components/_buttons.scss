@@ -11,8 +11,8 @@ button {
 .btn {
   margin: 0 auto;
   display: inline-block;
-  background: $white;
-  color: $gray;
+  background: $color-white;
+  color: $color-text;
   font-size: rem(14px);
   min-width: 70px;
   text-align: center;
@@ -25,21 +25,37 @@ button {
 
   &:hover,
   &:active {
-    background: $light-gray;
-    color: $white;
+    background: $color-gray-light;
+    color: $color-white;
   }
 
   &--primary {
-    color: $white;
-    background: $primary-color;
+    color: $color-white;
+    background: $color-primary;
 
     &:hover,
     &:active {
-      background: $primary-color-darken;
+      background: $color-primary-dark;
     }
   }
 
+  &--secondary {
+    color: $color-white;
+    background: $color-secondary;
+
+    &:hover,
+    &:active {
+      background: $color-secondary-dark;
+    }
+  }
+
+  &--large {
+    font-size: rem(17px);
+    padding: rem(12px) rem(20px);
+  }
+
   &--block {
+    font-size: rem(17px);
     display: block;
     width: 100%;
     padding: rem(12px) 0;

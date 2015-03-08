@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
+var mainBowerFiles = require('main-bower-files');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -108,7 +109,7 @@ gulp.task('styles:compress', function() {
 
 // Concatenate JavaScript
 gulp.task('scripts:concat', function() {
-  return $.bowerFiles()
+  return gulp.src(mainBowerFiles())
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe($.size({
       title: 'scripts:concat'
@@ -131,6 +132,7 @@ gulp.task('scripts:compress', function() {
 gulp.task('copy', function() {
   return gulp.src([
       'app/*',
+      '!app/views/',
       '!app/*.html'
     ])
     .pipe(gulp.dest('dist'))

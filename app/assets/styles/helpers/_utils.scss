@@ -1,0 +1,23 @@
+// ==========================================================================
+// Utility Classes
+// ==========================================================================
+
+.u-clearfix {
+  @extend %clearfix;
+}
+
+.u-hide-text {
+  @extend %hide-text;
+}
+
+.u-grayscale {
+  @extend %grayscale;
+}
+
+.u-sr-only {
+  @extend %sr-only;
+}
+
+.u-text-truncate {
+  @extend %text-truncate;
+}

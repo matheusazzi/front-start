@@ -13,13 +13,13 @@ button,
 input,
 select,
 textarea {
-  color: $main-text-color;
+  color: $color-text;
 }
 
 html {
   font-size: $main-font-size;
   font-family: $main-font-family;
-  line-height: 1.4;
+  line-height: $main-line-height;
 }
 
 :active,
@@ -50,7 +50,8 @@ address {
 }
 
 ::selection {
-  background: #B3D4FC;
+  background: $color-primary;
+  color: $color-white;
   text-shadow: none;
 }
 

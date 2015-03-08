@@ -13,33 +13,34 @@ textarea {
 .form-field {
   width: 100%;
   height: rem(35px);
-  border: 1px solid $gray;
+  border: 1px solid $color-gray;
+  border-radius: 4px;
   font-size: rem(14px);
-  color: #43454A;
+  color: $color-gray;
   line-height: 1.2;
   padding: rem(10px);
-  background: $white;
+  background: $color-white;
   margin: 0 0 14px;
 
   &:focus {
-    border-color: $primary-color;
+    border-color: $color-primary;
   }
 
   @include placeholder {
-    color: lighten(#43454A, 10%);
+    color: $color-gray-light;
     opacity: 1;
   }
 
   &.placeholder {
-    color: #43454A;
+    color: $color-gray-light;
   }
 
   &.has-error {
-    border-color: $error;
+    border-color: $color-error;
   }
 
   &.has-success {
-    border-color: $success;
+    border-color: $color-success;
   }
 
   &--text {
@@ -51,7 +52,7 @@ textarea {
 :disabled .form-field,
 .form-field.is-disabled,
 .is-disabled .form-field {
-  border: 1px solid $primary-color;
+  border: 1px solid $color-primary;
   pointer-events: none;
   opacity: .5;
 }
