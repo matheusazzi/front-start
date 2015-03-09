@@ -18,3 +18,10 @@ a,
 .link {
   color: $color-primary;
 }
+
+p,
+ul,
+ol,
+dl {
+  margin-bottom: 10px;
+}

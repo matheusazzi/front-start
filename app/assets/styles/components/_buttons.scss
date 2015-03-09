@@ -8,6 +8,10 @@ button {
   background: transparent;
 }
 
+.btn-group {
+  margin-bottom: 10px;
+}
+
 .btn {
   margin: 0 auto;
   display: inline-block;
@@ -15,13 +19,14 @@ button {
   color: $color-text;
   font-size: rem(14px);
   min-width: 70px;
+  max-width: 100%;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
   padding: rem(6px) rem(12px);
   border-radius: 3px;
   user-select: none;
-  transition: all 250ms;
+  transition: all 200ms;
 
   &:hover,
   &:active {
