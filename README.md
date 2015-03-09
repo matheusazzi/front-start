@@ -22,6 +22,7 @@ This is my front start for projects.
 
 - [NodeJS](http://nodejs.org/)
 - [Gulp](http://github.com/gulpjs/gulp)
+- [Bower](http://bower.io/)
 
 Make sure do you have NodeJS installed, running `node-v` in your terminal, if you see a higher version than v0.10 you can continue, otherwise install the latest version of [NodeJS](http://nodejs.org/).
 
@@ -34,7 +35,7 @@ Just clone the repo and install the node modules is what you need to use.
 ```
 git clone http://github.com/matheusazzi/front-start.git
 cd front-start
-npm i
+npm i && bower install
 ```
 
 ## Workflow
