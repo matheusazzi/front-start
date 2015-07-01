@@ -2,7 +2,11 @@
 
 // Utils
   'helpers/functions',
-  'helpers/variables',
+  'helpers/breakpoints',
+  'helpers/general',
+  'helpers/colors',
+  'helpers/z-index',
+  'helpers/typography',
   'helpers/placeholders',
   'helpers/utils',
 
@@ -11,13 +15,16 @@
   '../vendor/bourbon/dist/bourbon',
   '../vendor/neat/app/assets/stylesheets/neat',
 
+// Base
+  'base/general',
+  'base/container',
+  'base/viewport',
+  'base/typography',
+  'base/buttons',
+  'base/forms',
+
 // Components
-  'components/geral',
-  'components/container',
-  'components/viewport',
-  'components/typography',
-  'components/buttons',
-  'components/forms',
+  'components/breadcrumbs',
 
 // Widgets
   'widgets/header',

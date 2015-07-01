@@ -1,0 +1,23 @@
+// ==========================================================================
+// Breadcrumbs
+// ==========================================================================
+
+.breadcrumb {
+
+  &__item {
+    display: inline;
+    padding-right: 5px;
+
+    &:after {
+      content: '>';
+      padding-left: 5px;
+      font-size: 90%;
+    }
+
+    &.is-active {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

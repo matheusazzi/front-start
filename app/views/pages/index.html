@@ -1,7 +1,6 @@
 {% extends "../layouts/default.html" %}
 
 {% set title = "Front Start" %}
-{% set modules = "home" %}
 
 {% block styles %}
 <!-- build:css assets/styles/style.css -->
@@ -10,10 +9,18 @@
 {% endblock %}
 
 {% block content %}
-<main class="main" role="main">
+<main class="main" role="main" data-module="home">
   <div class="container">
     <h1>Hello Dev!</h1>
+
+    <ul class="breadcrumb">
+      <li class="breadcrumb__item"><a href="/">Front Start</a></li>
+      <li class="breadcrumb__item"><a href="/">Home</a></li>
+      <li class="breadcrumb__item is-active">Sample</li>
+    </ul>
+
     <p>With this you have many features:</p>
+
     <ul>
       <li>HTML5 Boilerplate</li>
       <li>Swig Template Engine, for smart views</li>

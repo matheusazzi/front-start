@@ -17,6 +17,12 @@ h6, .h6 { font-size: $font-size-h6; }
 a,
 .link {
   color: $color-primary;
+  transition: color 250ms ease-out;
+
+  &:hover,
+  &:active {
+    color: $color-primary-dark;
+  }
 }
 
 p,

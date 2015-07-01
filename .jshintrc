@@ -16,7 +16,6 @@
   "unused": "vars",
   "strict": true,
   "globals": {
-    "jQuery": true,
     "define": true,
     "require": true
   }

@@ -26,7 +26,7 @@ button {
   padding: rem(6px) rem(12px);
   border-radius: 3px;
   user-select: none;
-  transition: all 200ms;
+  transition: all 250ms ease-out;
 
   &:hover,
   &:active {

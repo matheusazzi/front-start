@@ -2,23 +2,35 @@ define('backToTop', ['jquery'],
   function($) {
     'use strict';
 
-    $.fn.backToTop = function(options) {
-      var defaults = {
-        scrollSpeed: 400,
-        scrollToPosition: 0
-      };
+    var defaults = {
+      scrollSpeed: 400,
+      scrollToPosition: 0
+    };
 
-      var settings = $.extend({}, defaults, options);
+    function BackToTop(element, options) {
+      this.element = $(element);
+      this.settings = $.extend({}, defaults, options);
+      this.addListener();
+    }
 
-      this.on('click', function(e) {
+    BackToTop.prototype.addListener = function() {
+      var self = this;
+
+      this.element.on('click', function(e) {
         e.preventDefault();
 
         $('html, body').animate({
-          scrollTop: settings.scrollToPosition
-        }, settings.scrollSpeed);
+          scrollTop: self.settings.scrollToPosition
+        }, self.settings.scrollSpeed);
       });
+    };
 
-      return this;
+    $.fn.backToTop = function(options) {
+      return this.each(function() {
+        if (!$.data(this, 'backToTop')) {
+          $.data(this, 'backToTop', new BackToTop(this, options));
+        }
+      });
     };
   }
 );

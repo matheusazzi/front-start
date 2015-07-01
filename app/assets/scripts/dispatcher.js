@@ -3,7 +3,7 @@ define('dispatcher', ['jquery'],
     'use strict';
 
     var components = $('[data-component]'),
-      modules = $('body').data('modules').split();
+      modules = $('[data-modules]');
 
     $.each(components, function(__index, component) {
       var currentComponent = $(component),

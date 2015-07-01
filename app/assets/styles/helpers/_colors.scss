@@ -1,0 +1,26 @@
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+$color-primary: #428BCA;
+$color-primary-light: lighten($color-primary, 6%);
+$color-primary-dark: darken($color-primary, 6%);
+
+$color-secondary: #196E76;
+$color-secondary-light: lighten($color-secondary, 6%);
+$color-secondary-dark: darken($color-secondary, 6%);
+
+$color-gray: #666;
+$color-gray-light: lighten($color-gray, 20%);
+$color-gray-dark: darken($color-gray, 10%);
+
+$color-error: #A94442;
+$color-success: #3C763D;
+
+$color-white: #FFF;
+
+$color-brand-twitter: #55ACEE;
+$color-brand-facebook: #3B5998;
+$color-brand-instagram: #3F729B;
+$color-brand-pinterest: #CC2127;
+$color-brand-youtube: #E52D27;

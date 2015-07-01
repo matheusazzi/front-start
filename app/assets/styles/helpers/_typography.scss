@@ -1,0 +1,14 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+$color-titles: $color-primary;
+$color-link: $color-primary;
+$color-text: $color-gray-dark;
+
+$font-size-h1: rem(ceil($main-font-size * 2.6));   // ~40px
+$font-size-h2: rem(floor($main-font-size * 2.15)); // ~34px
+$font-size-h3: rem(ceil($main-font-size * 1.7));   // ~28px
+$font-size-h4: rem(ceil($main-font-size * 1.25));  // ~20px
+$font-size-h5: rem($main-font-size);
+$font-size-h6: rem(ceil($main-font-size * 0.85));  // ~14px

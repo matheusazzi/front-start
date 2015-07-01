@@ -1,6 +1,6 @@
 {
   "name": "front-start",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "devDependencies": {
     "browser-sync": "^1.9.1",

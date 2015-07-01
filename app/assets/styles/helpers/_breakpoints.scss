@@ -1,0 +1,33 @@
+// ==========================================================================
+// Breakpoints
+// ==========================================================================
+
+$breakpoints: ('xs', 'sm', 'md', 'lg', 'xl');
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1120px;
+$breakpoint-xl: 1280px;
+
+$breakpoint-xs-min: 0;
+$breakpoint-sm-min: $breakpoint-xs + 1;
+$breakpoint-md-min: $breakpoint-sm + 1;
+$breakpoint-lg-min: $breakpoint-md + 1;
+$breakpoint-xl-min: $breakpoint-lg + 1;
+
+$queries: (
+  xs-min: $breakpoint-xs-min,
+  xs-max: $breakpoint-xs,
+
+  sm-min: $breakpoint-sm-min,
+  sm-max: $breakpoint-sm,
+
+  md-min: $breakpoint-md-min,
+  md-max: $breakpoint-md,
+
+  lg-min: $breakpoint-lg-min,
+  lg-max: $breakpoint-lg,
+
+  xl-min: $breakpoint-xl-min
+);
