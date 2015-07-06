@@ -14,7 +14,7 @@ This is my front start for projects.
 - AMD JS Modules (files are dynamically executed by a [Dispatcher](#how-dispatcher-works))
 - jQuery, Normalize and Modernizr
 - [Bourbon](http://bourbon.io/) and [Neat](http://neat.bourbon.io/) to provide some mixins and a Grid System
-- JS Hint
+- JS Hint and JSCS
 - HTML minification
 - Assets are concatenated and compressed (JS, CSS and images)
 
@@ -42,11 +42,15 @@ npm i && bower install
 
 ### For development:
 
-`gulp serve` or just `gulp s`
+`npm start`
+
+### For tests:
+
+`npm test`
 
 ### For build:
 
-`gulp build` or just `gulp b`
+`npm build`
 
 This command will generate a `/dist` folder, with all files concatenated and compressed.
 
@@ -85,11 +89,13 @@ front-start/
 ├── .editorconfig
 ├── .gitattributes
 ├── .gitignore
+├── .jscsrc
 ├── .jshintrc
 ├── .travis.yml
 ├── bower.json
 ├── gulpfile.js
 ├── package.json
+├── README.md
 ```
 
 ## Browser Support
@@ -115,7 +121,7 @@ define('dispatcher', ['jquery'],
     'use strict';
 
     var components = $('[data-component]'),
-      modules = $('body').data('modules').split();
+      modules = $('[data-modules]');
 
     $.each(components, function(__index, component) {
       var currentComponent = $(component),
@@ -215,23 +221,35 @@ define('backToTop', ['jquery'],
   function($) {
     'use strict';
 
-    $.fn.backToTop = function(options) {
-      var defaults = {
-        scrollSpeed: 400,
-        scrollToPosition: 0
-      };
+    var defaults = {
+      scrollSpeed: 400,
+      scrollToPosition: 0
+    };
 
-      var settings = $.extend({}, defaults, options);
+    function BackToTop(element, options) {
+      this.element = $(element);
+      this.settings = $.extend({}, defaults, options);
+      this.addListener();
+    }
 
-      this.on('click', function(e) {
+    BackToTop.prototype.addListener = function() {
+      var self = this;
+
+      this.element.on('click', function(e) {
         e.preventDefault();
 
         $('html, body').animate({
-          scrollTop: settings.scrollToPosition
-        }, settings.scrollSpeed);
+          scrollTop: self.settings.scrollToPosition
+        }, self.settings.scrollSpeed);
       });
+    };
 
-      return this;
+    $.fn.backToTop = function(options) {
+      return this.each(function() {
+        if (!$.data(this, 'backToTop')) {
+          $.data(this, 'backToTop', new BackToTop(this, options));
+        }
+      });
     };
   }
 );

@@ -2,6 +2,11 @@
   "name": "front-start",
   "version": "1.0.4",
   "private": true,
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start",
+    "start": "./node_modules/gulp/bin/gulp.js serve",
+    "build": "./node_modules/gulp/bin/gulp.js build"
+  },
   "devDependencies": {
     "browser-sync": "^1.9.1",
     "del": "^1.1.1",
@@ -12,6 +17,7 @@
     "gulp-flatten": "0.0.4",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^2.1.0",
+    "gulp-jscs": "^1.6.0",
     "gulp-jshint": "^1.9.0",
     "gulp-menu": "^0.2.2",
     "gulp-minify-html": "^0.1.7",

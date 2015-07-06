@@ -15,7 +15,7 @@ gulp.task('serve', function() {
 
   gulp.watch(['app/views/**/*.html'], ['views:compile']);
   gulp.watch(['app/assets/styles/**/*.scss'], ['styles:compile']);
-  gulp.watch(['app/assets/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/assets/scripts/**/*.js'], ['jscs', 'jshint']);
   gulp.watch(['app/assets/images/**/*'], reload);
 });
 
