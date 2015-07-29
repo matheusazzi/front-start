@@ -81,6 +81,8 @@ front-start/
 │   │   ├── layouts/
 │   │   ├── pages/
 │   │   ├── partials/
+├── tasks/
+├── specs/
 │   ├── 404.html
 │   ├── favicon.ico
 │   ├── humans.txt
