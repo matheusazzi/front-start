@@ -1,36 +1,34 @@
-define('backToTop', ['jquery'],
-  function($) {
-    'use strict';
+import $ from 'vendor/jquery/dist/jquery';
 
-    var defaults = {
-      scrollSpeed: 400,
-      scrollToPosition: 0
-    };
+const defaults = {
+  scrollSpeed: 400,
+  scrollToPosition: 0
+};
 
-    function BackToTop(element, options) {
-      this.element = $(element);
-      this.settings = $.extend({}, defaults, options);
-      this.addListener();
-    }
-
-    BackToTop.prototype.addListener = function() {
-      var self = this;
-
-      this.element.on('click', function(e) {
-        e.preventDefault();
-
-        $('html, body').animate({
-          scrollTop: self.settings.scrollToPosition
-        }, self.settings.scrollSpeed);
-      });
-    };
-
-    $.fn.backToTop = function(options) {
-      return this.each(function() {
-        if (!$.data(this, 'backToTop')) {
-          $.data(this, 'backToTop', new BackToTop(this, options));
-        }
-      });
-    };
+class BackToTop {
+  constructor(element, options) {
+    this.element = $(element);
+    this.settings = $.extend({}, defaults, options);
+    this.addListener();
   }
-);
+
+  addListener() {
+    this.element.on('click', (e) => {
+      e.preventDefault();
+
+      $('html, body').animate({
+        scrollTop: this.settings.scrollToPosition
+      }, this.settings.scrollSpeed);
+    });
+  }
+}
+
+$.fn.backToTop = function backToTop(options) {
+  return this.each(() => {
+    if (!$.data(this, 'backToTop')) {
+      $.data(this, 'backToTop', new BackToTop(this, options));
+    }
+  });
+};
+
+export default $.fn.backToTop;

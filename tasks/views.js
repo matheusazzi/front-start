@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var swig = require('gulp-swig');
 var size = require('gulp-size');
-var useref = require('gulp-useref');
 var minifyHtml = require('gulp-minify-html');
 var reload = require('browser-sync').reload;
 
@@ -15,7 +14,8 @@ gulp.task('views:compile', function() {
     }))
     .pipe(gulp.dest('.tmp'))
     .pipe(reload({
-      stream: true
+      stream: true,
+      once: true
     }))
     .pipe(size({
       title: 'views:compile'
@@ -30,7 +30,6 @@ gulp.task('views:compress', function() {
         cache: false
       }
     }))
-    .pipe(useref())
     .pipe(minifyHtml())
     .pipe(gulp.dest('dist'))
     .pipe(size({

@@ -9,12 +9,12 @@ This is my front start for projects.
 - Swig Template Engine, for smart views
 - Bower, as a package manager
 - Sass (with libsass for higher performance)
+- ES6 Ready and ESLint
+- Test suite with Karma
 - Auto Prefixer
 - Browser Sync
-- AMD JS Modules (files are dynamically executed by a [Dispatcher](#how-dispatcher-works))
 - jQuery, Normalize and Modernizr
 - [Bourbon](http://bourbon.io/) and [Neat](http://neat.bourbon.io/) to provide some mixins and a Grid System
-- JS Hint and JSCS
 - HTML minification
 - Assets are concatenated and compressed (JS, CSS and images)
 
@@ -69,7 +69,7 @@ front-start/
 ├── app/
 │   ├── assets/
 │   │   ├── images/
-│   │   ├── scripts/  # AMD JS files
+│   │   ├── scripts/  # ES6 JS files
 │   │   │   ├── components/
 │   │   │   ├── modules/
 │   │   ├── styles/   # SCSS files
@@ -89,20 +89,21 @@ front-start/
 │   ├── robots.txt
 ├── .bowerrc
 ├── .editorconfig
+├── .eslintrc
 ├── .gitattributes
 ├── .gitignore
-├── .jscsrc
-├── .jshintrc
 ├── .travis.yml
 ├── bower.json
 ├── gulpfile.js
+├── karma.conf.js
 ├── package.json
 ├── README.md
+├── webpack.config.js
 ```
 
 ## Browser Support
 
-- IE8+
+- IE9+
 - Firefox
 - Chrome
 - Safari 7+
@@ -110,152 +111,6 @@ front-start/
 - iOS Safari 7+
 - Android / Chrome 4.4+
 - BlackBerry 10
-
-## How Dispatcher Works
-
-We use AMD to organize our code, so we use [Almond](http://github.com/jrburke/almond) for this.
-
-This is the dispatcher code:
-
-```javascript
-define('dispatcher', ['jquery'],
-  function($) {
-    'use strict';
-
-    var components = $('[data-component]'),
-      modules = $('[data-modules]');
-
-    $.each(components, function(__index, component) {
-      var currentComponent = $(component),
-        options = currentComponent.data();
-
-      require(options.component);
-      currentComponent[options.component](options);
-    });
-
-    $.each(modules, function(index) {
-      var Module = require(modules[index]);
-      Module = new Module();
-      Module.initialize();
-    });
-  }
-);
-
-require('dispatcher');
-```
-
-The dispatcher will instantiate modules and execute components like a jQuery plugin, then you need to code them that way.
-
-If you have a code like this:
-
-```html
-<body data-modules="foo bar baz">
-
-  <button data-component="backToTop" data-speed="600">Back to top</button>
-
-  <div
-    data-component="carousel"
-    data-pagination="true"
-    data-slides-to-show="3"
-    data-circular="true"></div>
-
-</body>
-```
-
-The dispatcher will automatically require the modules `foo`, `bar` and `baz` present in `data-modules` on `body` tag. And will execute the components based on the attribute `data-component`, passing other attributes as options, after require the files, this example will execute:
-
-```javascript
-var Module;
-
-Module = new Foo(); Module.initialize();
-Module = new Bar(); Module.initialize();
-Module = new Baz(); Module.initialize();
-
-$('data-component="backToTop"').backToTop({
-  speed: 600
-});
-
-$('[data-component="carousel"]').carousel({
-  pagination: true,
-  slidesToShow: 3,
-  circular: true
-});
-```
-
-### Coding modules
-
-Code modules like a javascript class, using a method called `initialize` to start they behavior, so it will be instantiate when needed.
-
-> Why have an initialize method?
-
-- Because constructors should not cause [side effects](http://blog.millermedeiros.com/constructors-should-not-cause-side-effects/).
-
-```javascript
-define('someService', ['jquery'],
-  function($) {
-    'use strict';
-
-    function SomeService() {
-      this.message = 'Hello from SomeService Module';
-    }
-
-    SomeService.prototype.initialize = function() {
-      this.sayHello();
-    };
-
-    SomeService.prototype.sayHello = function() {
-      console.log(this.message);
-    };
-
-    return SomeService;
-  }
-);
-```
-
-### Coding components
-
-Code every component like a jQuery plugin, it will be dynamically executed passing the options to the plugin.
-
-A component should always return `this`.
-
-```javascript
-define('backToTop', ['jquery'],
-  function($) {
-    'use strict';
-
-    var defaults = {
-      scrollSpeed: 400,
-      scrollToPosition: 0
-    };
-
-    function BackToTop(element, options) {
-      this.element = $(element);
-      this.settings = $.extend({}, defaults, options);
-      this.addListener();
-    }
-
-    BackToTop.prototype.addListener = function() {
-      var self = this;
-
-      this.element.on('click', function(e) {
-        e.preventDefault();
-
-        $('html, body').animate({
-          scrollTop: self.settings.scrollToPosition
-        }, self.settings.scrollSpeed);
-      });
-    };
-
-    $.fn.backToTop = function(options) {
-      return this.each(function() {
-        if (!$.data(this, 'backToTop')) {
-          $.data(this, 'backToTop', new BackToTop(this, options));
-        }
-      });
-    };
-  }
-);
-```
 
 ## License
 

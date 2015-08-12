@@ -11,11 +11,17 @@ gulp.task('serve', function() {
     }
   });
 
-  gulp.start('views:compile', 'styles:compile', 'jshint');
+  gulp.start(
+    'views:compile',
+    'styles:compile',
+    'eslint',
+    'scripts:modernizr-dev',
+    'scripts:compile'
+  );
 
   gulp.watch(['app/views/**/*.html'], ['views:compile']);
-  gulp.watch(['app/assets/styles/**/*.scss'], ['styles:compile']);
-  gulp.watch(['app/assets/scripts/**/*.js'], ['jscs', 'jshint']);
+  gulp.watch(['app/assets/styles/**/*.{scss,sass}'], ['styles:compile']);
+  gulp.watch(['app/assets/scripts/**/*.js'], ['eslint', 'scripts:compile']);
   gulp.watch(['app/assets/images/**/*'], reload);
 });
 

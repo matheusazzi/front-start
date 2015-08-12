@@ -2,12 +2,6 @@
 
 {% set title = "Front Start" %}
 
-{% block styles %}
-<!-- build:css assets/styles/style.css -->
-<link rel="stylesheet" href="styles/style.css">
-<!-- endbuild -->
-{% endblock %}
-
 {% block content %}
 <main class="main" role="main" data-module="home">
   <div class="container">
@@ -28,10 +22,10 @@
       <li>Sass (with libsass for higher performance)</li>
       <li>Auto Prefixer</li>
       <li>Browser Sync</li>
-      <li>AMD JS Modules (files are dynamically executed by a dispatcher)</li>
+      <li>ES6 Ready and ESLint</li>
+      <li>Test suite with Karma</li>
       <li>jQuery, Normalize and Modernizr</li>
       <li>Bourbon and Neat to provide some mixins and a Grid System</li>
-      <li>JS Hint</li>
       <li>HTML minification</li>
       <li>Assets are concatenated and compressed (JS, CSS and images)</li>
     </ul>
@@ -45,14 +39,4 @@
 
 <aside class="sidebar" role="complementary">
 </aside>
-{% endblock %}
-
-{% block scripts %}
-<!-- build:js assets/scripts/app.js -->
-<script src="assets/vendor/almond/almond.js"></script>
-<script src="assets/vendor/jquery/dist/jquery.js"></script>
-<script src="assets/scripts/modules/home.js"></script>
-<script src="assets/scripts/components/back-to-top.js"></script>
-<script src="assets/scripts/dispatcher.js"></script>
-<!-- endbuild -->
 {% endblock %}

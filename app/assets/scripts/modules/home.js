@@ -1,19 +1,15 @@
-define('home', ['jquery'],
-  function($) {
-    'use strict';
-
-    function Home() {
-      this.message = 'Hello from Home Module';
-    }
-
-    Home.prototype.initialize = function() {
-      this.sayHello();
-    };
-
-    Home.prototype.sayHello = function() {
-      console.log(this.message);
-    };
-
-    return Home;
+class Home {
+  constructor() {
+    this.message = 'Hello from Home Module';
   }
-);
+
+  initialize() {
+    this.sayHello();
+  }
+
+  sayHello() {
+    return this.message;
+  }
+}
+
+export default Home;

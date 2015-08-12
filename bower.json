@@ -5,7 +5,6 @@
     "modernizr": "~2.8.3",
     "modularized-normalize-scss": "~3.0.2",
     "jquery": "~2.1.4",
-    "almond": "~0.3.0",
     "bourbon": "~4.0.2",
     "neat": "~1.7.1"
   }

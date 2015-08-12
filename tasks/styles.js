@@ -19,12 +19,13 @@ var AUTOPREFIXER_BROWSERS = [
 
 // Compile Sass Files and Autoprefix
 gulp.task('styles:compile', function() {
-  return gulp.src('app/assets/styles/*.scss')
+  return gulp.src('app/assets/styles/*.{scss,sass}')
     .pipe(sass().on('error', console.error.bind(console)))
     .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('.tmp/assets/styles'))
     .pipe(reload({
-      stream: true
+      stream: true,
+      once: true
     }))
     .pipe(size({
       title: 'styles:compile'
@@ -33,7 +34,7 @@ gulp.task('styles:compile', function() {
 
 // Compress Styles
 gulp.task('styles:compress', function() {
-  return gulp.src('.tmp/styles/*.css')
+  return gulp.src('.tmp/assets/styles/*.css')
     .pipe(csso())
     .pipe(gulp.dest('dist/assets/styles'))
     .pipe(size({

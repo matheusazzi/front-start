@@ -6,9 +6,8 @@ gulp.task('build', ['clean'], function(cb) {
   runSequence(
     'styles:compile',
     'styles:compress',
-    'jshint',
-    'scripts:concat',
-    'scripts:modernizr',
+    'eslint',
+    'scripts:modernizr-build',
     'scripts:compress',
     'views:compress',
     'images',
