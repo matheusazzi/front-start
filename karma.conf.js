@@ -4,7 +4,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -24,16 +24,16 @@ module.exports = function(config) {
       resolve: {
         root: './',
         alias: {
-          scripts: 'app/assets/scripts/'
+          vendor: 'app/assets/vendor',
+          scripts: '../../app/assets/scripts/'
         }
       },
       module: {
        loaders: [
-          { test: /\.js/, exclude: /node_modules/, loader: 'babel-loader' }
+          { test: /\.js?$/, exclude: /node_modules/, loader: 'babel-loader' }
         ]
       }
     },
-
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor

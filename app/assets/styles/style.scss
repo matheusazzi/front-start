@@ -1,9 +1,9 @@
 @import
 
 // Utils
+  'helpers/general',
   'helpers/functions',
   'helpers/breakpoints',
-  'helpers/general',
   'helpers/colors',
   'helpers/z-index',
   'helpers/typography',
@@ -12,7 +12,7 @@
 
 // Vendors
   '../vendor/modularized-normalize-scss/normalize',
-  '../vendor/bourbon/dist/bourbon',
+  '../vendor/bourbon/app/assets/stylesheets/bourbon',
   '../vendor/neat/app/assets/stylesheets/neat',
 
 // Base

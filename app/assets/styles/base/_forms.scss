@@ -10,24 +10,36 @@ textarea {
   resize: vertical;
 }
 
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: rem(14px);
+}
+
 .form-field {
   width: 100%;
+  margin: 0;
   height: rem(35px);
   border: 2px solid $color-gray-light;
   border-radius: 4px;
   font-size: rem(14px);
   color: $color-gray;
   line-height: 1.2;
-  padding: rem(10px);
+  padding: rem(6px) rem(10px);
   background: $color-white;
-  margin: 0 0 14px;
   transition: border-color 200ms;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &.is-active {
     border-color: $color-gray;
   }
 
-  &:focus {
+  &:focus,
+  &.is-focused {
     border-color: $color-primary;
   }
 

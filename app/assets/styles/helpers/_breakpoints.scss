@@ -11,10 +11,10 @@ $breakpoint-lg: 1120px;
 $breakpoint-xl: 1280px;
 
 $breakpoint-xs-min: 0;
-$breakpoint-sm-min: $breakpoint-xs + 1;
-$breakpoint-md-min: $breakpoint-sm + 1;
-$breakpoint-lg-min: $breakpoint-md + 1;
-$breakpoint-xl-min: $breakpoint-lg + 1;
+$breakpoint-sm-min: rem($breakpoint-xs + 1px);
+$breakpoint-md-min: rem($breakpoint-sm + 1px);
+$breakpoint-lg-min: rem($breakpoint-md + 1px);
+$breakpoint-xl-min: rem($breakpoint-lg + 1px);
 
 $queries: (
   xs-min: $breakpoint-xs-min,

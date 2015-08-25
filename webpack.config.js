@@ -7,7 +7,7 @@ module.exports = {
   resolve: {
     root: './',
     alias: {
-      vendor: 'app/assets/vendor/'
+      vendor: 'app/assets/vendor'
     }
   },
   debug: true,

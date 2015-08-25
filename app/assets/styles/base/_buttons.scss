@@ -23,15 +23,26 @@ button {
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
+  touch-action: manipulation;
   padding: rem(6px) rem(12px);
   border-radius: 3px;
+  cursor: pointer;
   user-select: none;
+  text-decoration: none;
   transition: all 250ms ease-out;
 
   &:hover,
-  &:active {
+  &:active,
+  &.is-active {
     background: $color-gray-light;
     color: $color-white;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: .6;
+    cursor: default;
+    pointer-events: none;
   }
 
   &--primary {
@@ -39,7 +50,8 @@ button {
     background: $color-primary;
 
     &:hover,
-    &:active {
+    &:active,
+    &.is-active {
       background: $color-primary-dark;
     }
   }
@@ -49,7 +61,8 @@ button {
     background: $color-secondary;
 
     &:hover,
-    &:active {
+    &:active,
+    &.is-active {
       background: $color-secondary-dark;
     }
   }

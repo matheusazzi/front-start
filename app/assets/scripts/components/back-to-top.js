@@ -2,7 +2,8 @@ import $ from 'vendor/jquery/dist/jquery';
 
 const defaults = {
   scrollSpeed: 400,
-  scrollToPosition: 0
+  scrollToPosition: 0,
+  elem: $('html, body')
 };
 
 class BackToTop {
@@ -16,7 +17,7 @@ class BackToTop {
     this.element.on('click', (e) => {
       e.preventDefault();
 
-      $('html, body').animate({
+      this.settings.elem.animate({
         scrollTop: this.settings.scrollToPosition
       }, this.settings.scrollSpeed);
     });

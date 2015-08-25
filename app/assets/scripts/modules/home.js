@@ -1,6 +1,8 @@
+import message from './message';
+
 class Home {
   constructor() {
-    this.message = 'Hello from Home Module';
+    this.message = message;
   }
 
   initialize() {

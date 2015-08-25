@@ -2,10 +2,10 @@
   "name": "front-start",
   "private": true,
   "dependencies": {
-    "modernizr": "~2.8.3",
-    "modularized-normalize-scss": "~3.0.2",
     "jquery": "~2.1.4",
-    "bourbon": "~4.0.2",
-    "neat": "~1.7.1"
+    "bourbon": "~4.2.4",
+    "neat": "~1.7.2",
+    "modularized-normalize-scss": "~3.0.3",
+    "modernizr": "~2.8.3"
   }
 }
