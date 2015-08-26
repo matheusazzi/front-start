@@ -1,4 +1,5 @@
 // Karma configuration
+var path = require('path');
 
 module.exports = function(config) {
   config.set({
@@ -22,10 +23,10 @@ module.exports = function(config) {
 
     webpack: {
       resolve: {
-        root: './',
+        root: path.resolve('./'),
         alias: {
           vendor: 'app/assets/vendor',
-          scripts: '../../app/assets/scripts/'
+          scripts: 'app/assets/scripts'
         }
       },
       module: {

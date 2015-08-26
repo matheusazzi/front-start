@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   entry: './app/assets/scripts/app.js',
   output: {
@@ -5,7 +7,7 @@ module.exports = {
     filename: 'app.js'
   },
   resolve: {
-    root: './',
+    root: path.resolve('./'),
     alias: {
       vendor: 'app/assets/vendor'
     }
