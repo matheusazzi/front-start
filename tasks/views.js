@@ -1,11 +1,12 @@
-var gulp = require('gulp');
-var swig = require('gulp-swig');
-var size = require('gulp-size');
-var minifyHtml = require('gulp-minify-html');
-var reload = require('browser-sync').reload;
+import gulp from 'gulp'
+import swig from 'gulp-swig'
+import size from 'gulp-size'
+import minifyHtml from 'gulp-minify-html'
+import browserSync from 'browser-sync'
+const reload = browserSync.reload
 
 // Compile Swig views
-gulp.task('views:compile', function() {
+gulp.task('views:compile', () => {
   return gulp.src('app/views/pages/*.html')
     .pipe(swig({
       defaults: {
@@ -19,11 +20,11 @@ gulp.task('views:compile', function() {
     }))
     .pipe(size({
       title: 'views:compile'
-    }));
-});
+    }))
+})
 
 // Compress Swig views
-gulp.task('views:compress', function() {
+gulp.task('views:compress', () => {
   return gulp.src('app/views/pages/*.html')
     .pipe(swig({
       defaults: {
@@ -34,5 +35,5 @@ gulp.task('views:compress', function() {
     .pipe(gulp.dest('dist'))
     .pipe(size({
       title: 'views:compress'
-    }));
-});
+    }))
+})

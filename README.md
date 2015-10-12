@@ -24,9 +24,9 @@ This is my front start for projects.
 - [Gulp](http://github.com/gulpjs/gulp)
 - [Bower](http://bower.io/)
 
-Make sure do you have NodeJS installed, running `node-v` in your terminal, if you see a higher version than v0.10 you can continue, otherwise install the latest version of [NodeJS](http://nodejs.org/).
+Make sure do you have NodeJS installed, running `node-v` in your terminal, if you see a higher version than v4.0.0 you can continue, otherwise install the latest version of [NodeJS](http://nodejs.org/).
 
-Check your Gulp version running `gulp -v` in your terminal, if you see a higher version than 3.8.0, everything is ok. Otherwise run `npm i -g gulp`.
+Check your Gulp version running `gulp -v` in your terminal, if you see a higher version than 3.9.0, everything is ok. Otherwise run `npm i -g gulp`.
 
 ### Installation
 
@@ -94,7 +94,7 @@ front-start/
 ├── .gitignore
 ├── .travis.yml
 ├── bower.json
-├── gulpfile.js
+├── gulpfile.babel.js
 ├── karma.conf.js
 ├── package.json
 ├── README.md
@@ -106,7 +106,7 @@ front-start/
 - IE9+
 - Firefox
 - Chrome
-- Safari 7+
+- Safari 8+
 - Opera 24+
 - iOS Safari 7+
 - Android / Chrome 4.4+

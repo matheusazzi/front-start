@@ -1,11 +1,12 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var csso = require('gulp-csso');
-var autoprefixer = require('gulp-autoprefixer');
-var size = require('gulp-size');
-var reload = require('browser-sync').reload;
+import gulp from 'gulp'
+import sass from 'gulp-sass'
+import csso from 'gulp-csso'
+import autoprefixer from 'gulp-autoprefixer'
+import size from 'gulp-size'
+import browserSync from 'browser-sync'
+const reload = browserSync.reload
 
-var AUTOPREFIXER_BROWSERS = [
+const AUTOPREFIXER_BROWSERS = [
   'ie >= 9',
   'ie_mob >= 10',
   'ff >= 30',
@@ -15,10 +16,10 @@ var AUTOPREFIXER_BROWSERS = [
   'ios >= 7',
   'android >= 4.4',
   'bb >= 10'
-];
+]
 
 // Compile Sass Files and Autoprefix
-gulp.task('styles:compile', function() {
+gulp.task('styles:compile', () => {
   return gulp.src('app/assets/styles/*.{scss,sass}')
     .pipe(sass().on('error', console.error.bind(console)))
     .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
@@ -29,15 +30,15 @@ gulp.task('styles:compile', function() {
     }))
     .pipe(size({
       title: 'styles:compile'
-    }));
-});
+    }))
+})
 
 // Compress Styles
-gulp.task('styles:compress', function() {
+gulp.task('styles:compress', () => {
   return gulp.src('.tmp/assets/styles/*.css')
     .pipe(csso())
     .pipe(gulp.dest('dist/assets/styles'))
     .pipe(size({
       title: 'styles:compress'
-    }));
-});
+    }))
+})

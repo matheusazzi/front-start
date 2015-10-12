@@ -1,10 +1,10 @@
 language: node_js
 
 node_js:
-  - '0.10'
+  - '4.0.0'
 
 before_install:
-  - npm install -g bower gulp
+  - npm install -g bower gulp babel-core
 
 install:
   - npm install

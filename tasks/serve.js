@@ -1,15 +1,15 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
+import gulp from 'gulp'
+import browserSync from 'browser-sync'
+const reload = browserSync.reload
 
 // Watch Files For Changes & Reload
-gulp.task('serve', function() {
+gulp.task('serve', () => {
   browserSync({
     notify: false,
     server: {
       baseDir: ['.tmp', 'app']
     }
-  });
+  })
 
   gulp.start(
     'views:compile',
@@ -17,23 +17,23 @@ gulp.task('serve', function() {
     'eslint',
     'scripts:modernizr-dev',
     'scripts:compile'
-  );
+  )
 
-  gulp.watch(['app/views/**/*.html'], ['views:compile']);
-  gulp.watch(['app/assets/styles/**/*.{scss,sass}'], ['styles:compile']);
-  gulp.watch(['app/assets/scripts/**/*.js'], ['eslint', 'scripts:compile']);
-  gulp.watch(['app/assets/images/**/*'], reload);
-});
+  gulp.watch(['app/views/**/*.html'], ['views:compile'])
+  gulp.watch(['app/assets/styles/**/*.{scss,sass}'], ['styles:compile'])
+  gulp.watch(['app/assets/scripts/**/*.js'], ['eslint', 'scripts:compile'])
+  gulp.watch(['app/assets/images/**/*'], reload)
+})
 
 // Serve Builded Directory
-gulp.task('serve:dist', ['build'], function() {
+gulp.task('serve:dist', ['build'], () => {
   browserSync({
     notify: false,
     server: {
       baseDir: 'dist'
     }
-  });
-});
+  })
+})
 
-gulp.task('s', ['serve']);
-gulp.task('s:dist', ['serve:dist']);
+gulp.task('s', ['serve'])
+gulp.task('s:dist', ['serve:dist'])

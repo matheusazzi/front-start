@@ -1,6 +1,6 @@
-var gulp = require('gulp');
-var menu = require('gulp-menu');
+import gulp from 'gulp'
+import menu from 'gulp-menu'
 
-gulp.task('default', function() {
-  menu(this);
-});
+gulp.task('default', () => {
+  menu(this)
+})

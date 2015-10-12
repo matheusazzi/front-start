@@ -6,10 +6,6 @@
   @return ($px / $base) * 1rem;
 }
 
-@function em($px, $base: $main-font-size) {
-  @return ($px / $base) * 1em;
-}
-
 @function image-path($file-name) {
   @return url(#{$asset-path + $file-name});
 }

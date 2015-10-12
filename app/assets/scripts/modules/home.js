@@ -1,17 +1,17 @@
-import message from './message';
+import message from './message'
 
 class Home {
   constructor() {
-    this.message = message;
+    this.message = message
   }
 
   initialize() {
-    this.sayHello();
+    this.sayHello()
   }
 
   sayHello() {
-    return this.message;
+    return this.message
   }
 }
 
-export default Home;
+export default Home

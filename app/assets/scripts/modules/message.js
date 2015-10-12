@@ -1,2 +1,2 @@
-const message = 'Hello from Message Module.';
-export default message;
+const message = 'Hello from Message Module.'
+export default message

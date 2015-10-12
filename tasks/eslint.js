@@ -1,9 +1,9 @@
-var gulp = require('gulp');
-var eslint = require('gulp-eslint');
+import gulp from 'gulp'
+import eslint from 'gulp-eslint'
 
 // Check code style
-gulp.task('eslint', function() {
+gulp.task('eslint', () => {
   return gulp.src('app/assets/scripts/**/*.js')
     .pipe(eslint())
-    .pipe(eslint.format());
-});
+    .pipe(eslint.format())
+})

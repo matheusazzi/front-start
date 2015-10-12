@@ -3,21 +3,25 @@
 // ==========================================================================
 
 .u-clearfix {
-  @extend %clearfix;
+  @include clearfix();
 }
 
 .u-hide-text {
-  @extend %hide-text;
+  @include hide-text();
 }
 
 .u-grayscale {
-  @extend %grayscale;
+  @include grayscale();
 }
 
 .u-sr-only {
-  @extend %sr-only;
+  @include sr-only();
 }
 
 .u-text-truncate {
-  @extend %text-truncate;
+  @include text-truncate();
+}
+
+.u-hidden {
+  display: none !important;
 }

@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var del = require('del');
-var size = require('gulp-size');
+import gulp from 'gulp'
+import del from 'del'
+import size from 'gulp-size'
 
-gulp.task('copy', function() {
+gulp.task('copy', () => {
   return gulp.src([
       'app/*',
       '!app/views/',
@@ -11,8 +11,8 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('dist'))
     .pipe(size({
       title: 'copy'
-    }));
-});
+    }))
+})
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist']))

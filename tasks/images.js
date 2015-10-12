@@ -1,11 +1,12 @@
-var gulp = require('gulp');
-var cache = require('gulp-cache');
-var imagemin = require('gulp-imagemin');
-var size = require('gulp-size');
-var reload = require('browser-sync').reload;
+import gulp from 'gulp'
+import cache from 'gulp-cache'
+import imagemin from 'gulp-imagemin'
+import size from 'gulp-size'
+import browserSync from 'browser-sync'
+const reload = browserSync.reload
 
 // Optimize Images
-gulp.task('images', function() {
+gulp.task('images', () => {
   return gulp.src('app/assets/images/**/*')
     .pipe(cache(imagemin({
       progressive: true,
@@ -19,5 +20,5 @@ gulp.task('images', function() {
     }))
     .pipe(size({
       title: 'images'
-    }));
-});
+    }))
+})

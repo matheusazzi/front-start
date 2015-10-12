@@ -3,7 +3,7 @@
 // ==========================================================================
 
 input[type="search"] {
-  -webkit-appearance: textfield;
+  appearance: textfield;
 }
 
 textarea {
@@ -46,10 +46,6 @@ label {
   @include placeholder {
     color: $color-gray-light;
     opacity: 1;
-  }
-
-  &.placeholder {
-    color: $color-gray-light;
   }
 
   &.has-error {
