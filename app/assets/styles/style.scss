@@ -11,9 +11,9 @@
   'helpers/utils',
 
 // Vendors
-  '../vendor/modularized-normalize-scss/normalize',
-  '../vendor/bourbon/app/assets/stylesheets/bourbon',
-  '../vendor/neat/app/assets/stylesheets/neat',
+  'normalize.css/normalize',
+  'bourbon/app/assets/stylesheets/bourbon',
+  'bourbon-neat/app/assets/stylesheets/neat',
 
 // Base
   'base/general',

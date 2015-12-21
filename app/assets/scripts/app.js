@@ -1,4 +1,4 @@
-import $ from 'vendor/jquery/dist/jquery'
+import $ from 'jquery'
 import Home from './modules/home'
 import './components/back-to-top'
 

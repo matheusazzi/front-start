@@ -1,3 +1,4 @@
+import path from 'path'
 import gulp from 'gulp'
 import sass from 'gulp-sass'
 import csso from 'gulp-csso'
@@ -21,7 +22,9 @@ const AUTOPREFIXER_BROWSERS = [
 // Compile Sass Files and Autoprefix
 gulp.task('styles:compile', () => {
   return gulp.src('app/assets/styles/*.{scss,sass}')
-    .pipe(sass().on('error', console.error.bind(console)))
+    .pipe(sass({
+      includePaths: [path.resolve('./node_modules')]
+    }).on('error', console.error.bind(console)))
     .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe(gulp.dest('.tmp/assets/styles'))
     .pipe(reload({

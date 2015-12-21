@@ -15,7 +15,6 @@ gulp.task('serve', () => {
     'views:compile',
     'styles:compile',
     'eslint',
-    'scripts:modernizr-dev',
     'scripts:compile'
   )
 

@@ -1,69 +1,69 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html lang="en-US class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en-US" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en-US" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en-US" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ title }}</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="robots" content="all">
-  <meta name="rating" content="general">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="all">
+    <meta name="rating" content="general">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="author" content="">
-  <meta name="Publisher" content="">
-  <meta name="owner" content="">
-  <meta name="copyright" content="">
+    <meta name="author" content="">
+    <meta name="Publisher" content="">
+    <meta name="owner" content="">
+    <meta name="copyright" content="">
 
-  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
 
-  <!-- Add to homescreen -->
-  <link rel="manifest" href="manifest.json">
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
 
-  <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="{{ title }}">
-  <link rel="icon" sizes="192x192" href="assets/images/touch/chrome-touch-icon-192x192.png">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="{{ title }}">
+    <link rel="icon" sizes="192x192" href="assets/images/touch/chrome-touch-icon-192x192.png">
 
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="{{ title }}">
-  <link rel="apple-touch-icon" href="assets/images/touch/apple-touch-icon.png">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="{{ title }}">
+    <link rel="apple-touch-icon" href="assets/images/touch/apple-touch-icon.png">
 
-  <!-- Tile icon for Win8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage" content="assets/images/touch/ms-touch-icon-144x144-precomposed.png">
-  <meta name="msapplication-TileColor" content="#222222">
-  <meta name="theme-color" content="#222222">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#222222">
 
-  <link rel="shortcut icon" href="favicon.ico">
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#222222">
 
-  <!-- Facebook -->
-  <meta property="og:title" content="">
-  <meta property="og:site_name" content="{{ title }}">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:type" content="site">
-  <meta property="og:description" content="">
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
 
-  <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles/style.css">
+    <!-- Facebook -->
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="{{ title }}">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="site">
+    <meta property="og:description" content="">
 
-  <script src="assets/scripts/modernizr.js"></script>
-</head>
+    <link rel="shortcut icon" href="favicon.ico">
 
-<body>
-  {% include "../partials/_header.html" %}
+    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/style.css">
+  </head>
 
-  {% block content %}{% endblock %}
+  <body>
+    {% include "../partials/_header.html" %}
 
-  {% include "../partials/_footer.html" %}
+    {% block content %}{% endblock %}
 
-  <script src="assets/scripts/app.js"></script>
+    {% include "../partials/_footer.html" %}
 
-  {% include "../partials/_analytics.html" %}
-</body>
+    <script src="assets/scripts/app.js"></script>
+
+    {% include "../partials/_analytics.html" %}
+  </body>
 </html>

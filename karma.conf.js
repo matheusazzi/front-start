@@ -25,14 +25,18 @@ module.exports = function(config) {
       resolve: {
         root: path.resolve('./'),
         alias: {
-          vendor: 'app/assets/vendor',
           scripts: 'app/assets/scripts'
         }
       },
       module: {
-       loaders: [
-          { test: /\.js?$/, exclude: /node_modules/, loader: 'babel-loader' }
-        ]
+        loaders: [{
+          test: /\.js?$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'babel',
+          query: {
+            cacheDirectory: true
+          }
+        }]
       }
     },
 

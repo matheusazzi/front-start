@@ -7,7 +7,6 @@ gulp.task('build', ['clean'], (cb) => {
     'styles:compile',
     'styles:compress',
     'eslint',
-    'scripts:modernizr-build',
     'scripts:compress',
     'views:compress',
     'images',

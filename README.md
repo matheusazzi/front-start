@@ -7,13 +7,13 @@ This is my front start for projects.
 
 - HTML5 Boilerplate
 - Swig Template Engine, for smart views
-- Bower, as a package manager
+- NPM as a package manager
 - Sass (with libsass for higher performance)
-- ES6 Ready and ESLint
-- Test suite with Karma
-- Auto Prefixer
-- Browser Sync
-- jQuery, Normalize and Modernizr
+- ES6/JSX Ready and ESLint
+- Test Suite with Karma, Mocha, Expect and Sinon
+- Autoprefixer
+- Browser Sync (live browser reloading and cross-device synchronization)
+- jQuery and Normalize as default
 - [Bourbon](http://bourbon.io/) and [Neat](http://neat.bourbon.io/) to provide some mixins and a Grid System
 - HTML minification
 - Assets are concatenated and compressed (JS, CSS and images)
@@ -22,9 +22,8 @@ This is my front start for projects.
 
 - [NodeJS](http://nodejs.org/)
 - [Gulp](http://github.com/gulpjs/gulp)
-- [Bower](http://bower.io/)
 
-Make sure do you have NodeJS installed, running `node-v` in your terminal, if you see a higher version than v4.0.0 you can continue, otherwise install the latest version of [NodeJS](http://nodejs.org/).
+Make sure do you have NodeJS installed, running `node-v` in your terminal, if you see a higher version than v5.0.0 you can continue, otherwise install the latest version of [NodeJS](http://nodejs.org/).
 
 Check your Gulp version running `gulp -v` in your terminal, if you see a higher version than 3.9.0, everything is ok. Otherwise run `npm i -g gulp`.
 
@@ -34,8 +33,7 @@ Just clone the repo and install the node modules is what you need to use.
 
 ```
 git clone http://github.com/matheusazzi/front-start.git
-cd front-start
-npm i && bower install
+cd front-start && npm install
 ```
 
 ## Workflow
@@ -76,7 +74,6 @@ front-start/
 │   │   │   ├── components/
 │   │   │   ├── helpers/
 │   │   │   ├── widgets/
-│   │   ├── vendor/   # Bower packages
 │   ├── views/        # Swig templates
 │   │   ├── layouts/
 │   │   ├── pages/
@@ -87,13 +84,13 @@ front-start/
 │   ├── favicon.ico
 │   ├── humans.txt
 │   ├── robots.txt
-├── .bowerrc
+├── .babelrc
 ├── .editorconfig
 ├── .eslintrc
 ├── .gitattributes
 ├── .gitignore
+├── .npmrc
 ├── .travis.yml
-├── bower.json
 ├── gulpfile.babel.js
 ├── karma.conf.js
 ├── package.json
@@ -103,14 +100,12 @@ front-start/
 
 ## Browser Support
 
-- IE9+
-- Firefox
 - Chrome
-- Safari 8+
-- Opera 24+
-- iOS Safari 7+
-- Android / Chrome 4.4+
-- BlackBerry 10
+- Firefox
+- Safari
+- Edge
+- Opera
+- IE9+
 
 ## License
 

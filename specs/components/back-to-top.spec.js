@@ -1,10 +1,11 @@
-import $ from 'vendor/jquery/dist/jquery'
+import $ from 'jquery'
 import BackToTop from 'scripts/components/back-to-top'
 
 describe('BackToTop', () => {
-  let button = $('<button />'),
-    body = $('body'),
-    elem
+  const button = $('<button />'),
+    body = $('body')
+
+  let elem
 
   beforeEach(() => {
     body.append(
@@ -22,7 +23,7 @@ describe('BackToTop', () => {
       elem.scrollTop(500)
       button.trigger('click')
 
-      setTimeout(function() {
+      setTimeout(() => {
         expect(elem.scrollTop()).toEqual(0)
         done()
       }, 100)

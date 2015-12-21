@@ -1,4 +1,4 @@
-import $ from 'vendor/jquery/dist/jquery'
+import $ from 'jquery'
 
 const defaults = {
   scrollSpeed: 400,
