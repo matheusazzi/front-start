@@ -22,8 +22,9 @@ This is my front start for projects.
 
 - [NodeJS](http://nodejs.org/)
 - [Gulp](http://github.com/gulpjs/gulp)
+- [Babel](https://github.com/babel/babel)
 
-Make sure do you have NodeJS installed, running `node-v` in your terminal, if you see a higher version than v5.0.0 you can continue, otherwise install the latest version of [NodeJS](http://nodejs.org/).
+Make sure do you have NodeJS installed, running `node -v` in your terminal, if you see a higher version than v5.0.0 you can continue, otherwise install the latest version of [NodeJS](http://nodejs.org/).
 
 Check your Gulp version running `gulp -v` in your terminal, if you see a higher version than 3.9.0, everything is ok. Otherwise run `npm i -g gulp`.
 

@@ -9,18 +9,18 @@ describe('Home', () => {
 
   describe('#initialize', () => {
     it('call #sayHello', () => {
-      spyOn(subject, 'sayHello')
+      sinon.spy(subject, 'sayHello')
       subject.initialize()
 
-      expect(subject.sayHello).toHaveBeenCalled()
-      subject.sayHello.calls.reset()
+      expect(subject.sayHello).to.have.been.called
+      subject.sayHello.restore()
     })
   })
 
   describe('#sayHello', () => {
     it('return module message', () => {
       subject.message = 'Foo'
-      expect(subject.sayHello()).toMatch('Foo')
+      expect(subject.sayHello()).to.equal('Foo')
     })
   })
 })

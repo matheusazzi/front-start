@@ -2,29 +2,29 @@ import $ from 'jquery'
 import BackToTop from 'scripts/components/back-to-top'
 
 describe('BackToTop', () => {
-  const button = $('<button />'),
-    body = $('body')
+  const $button = $('<button />'),
+    $body = $('body')
 
-  let elem
+  let $elem
 
   beforeEach(() => {
-    body.append(
+    $body.append(
       `<div class="container" style="height:100px;overflow:auto;">
-        <div style="height:1000px;" />
+        <div style="height:500px;" />
       </div>`
     )
 
-    elem = $('.container')
-    button.backToTop({ elem: elem, scrollSpeed: 50 })
+    $elem = $('.container')
+    $button.backToTop({ elem: $elem, scrollSpeed: 50 })
   })
 
   describe('When click', () => {
     it('scrolls to top of the window', (done) => {
-      elem.scrollTop(500)
-      button.trigger('click')
+      $elem.scrollTop(500)
+      $button.trigger('click')
 
       setTimeout(() => {
-        expect(elem.scrollTop()).toEqual(0)
+        expect($elem.scrollTop()).to.equal(0)
         done()
       }, 100)
     })
