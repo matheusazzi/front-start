@@ -1,7 +1,7 @@
 Front Start
 ================
 
-This is my front start for projects.
+[DEPRECATED] This is my front start for projects.
 
 ## Features
 
